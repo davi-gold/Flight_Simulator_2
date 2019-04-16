@@ -133,8 +133,8 @@
                     </Storyboard>
                 </Canvas.Resources>
             </Canvas>
-            <Label Name="try" Content="{Binding ElementName=Trottle, Path=Value}" FontSize="13" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" />
-            <Slider Name="Trottle" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle,Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="-184" Width="320" Canvas.Top="158" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" ValueChanged="Trottle_ValueChanged" >
+            <Label Name="try" Content="{Binding ElementName=Throttle, Path=Value}" FontSize="13" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" />
+            <Slider Name="Throttle" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle,Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="-184" Width="320" Canvas.Top="158" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" >
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -183,8 +183,8 @@
             </TextBlock>
             <TextBlock Text="← aileron →" Height="40" Width="140" FontSize="23" FontWeight="Bold" 
                        VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="101" Canvas.Top="-40" FontStretch="Medium"/>
-            <Label Name="Trottle_Copy1" Content="{Binding ElementName=Trottle_Copy, Path=Value}" FontSize="15" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" Canvas.Left="311" Canvas.Top="311" />
-            <Slider x:Name="Trottle_Copy" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle, Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="8" Width="320" Canvas.Top="350" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" ValueChanged="Trottle_Copy_ValueChanged" >
+            <Label Name="Throttle_Copy1" Content="{Binding ElementName=Throttle_Copy, Path=Value}" FontSize="15" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" Canvas.Left="311" Canvas.Top="311" />
+            <Slider x:Name="Throttle_Copy" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle, Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="8" Width="320" Canvas.Top="350" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" >
                 <Slider.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
