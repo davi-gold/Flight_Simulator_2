@@ -13,8 +13,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button FontSize="17" FontWeight="Bold" Background="PapayaWhip"  Content="Connect" HorizontalAlignment="Left" Margin="75,26,0,0" VerticalAlignment="Top" Width="104"/>
-        <Button FontSize="17" FontWeight="Bold" Background="PapayaWhip"  Content="Settings" HorizontalAlignment="Left" Margin="206,26,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button FontSize="17" FontWeight="Bold" Background="PapayaWhip"  Content="Connect" HorizontalAlignment="Left" Margin="71,33,0,0" VerticalAlignment="Top" Width="104"/>
+        <Button FontSize="17" FontWeight="Bold" Background="PapayaWhip"  Content="Settings" HorizontalAlignment="Left" Margin="216,33,0,0" VerticalAlignment="Top" Width="104"/>
 
 
     </Grid>
