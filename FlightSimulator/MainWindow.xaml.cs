@@ -23,5 +23,10 @@ namespace FlightSimulator
         {
             InitializeComponent();
         }
+
+        private void Joystick_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
