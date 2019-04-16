@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FlightSimulator.Views
 {
     /// <summary>
-    /// Interaction logic for connectSettings.xaml
+    /// Interaction logic for SettingsWindow.xaml
     /// </summary>
-    public partial class connectSettings : UserControl
+    public partial class SettingsWindow : Window
     {
-        public connectSettings()
+        public SettingsWindow()
         {
             InitializeComponent();
         }
