@@ -10,13 +10,22 @@
         Title="MainWindow" Height="570" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="685*"/>
-            <ColumnDefinition Width="308*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
-        </Grid.RowDefinitions>
-        <views:Joystick RenderTransformOrigin="0.506,0.429" Margin="3,1,1.333,0" Loaded="Joystick_Loaded" Grid.RowSpan="2" Height="263" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-
+        <Grid x:Name="lft" Grid.Column="0" Margin="0,0,36.667,-0.333">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button VerticalAlignment="Center" Content="Connect" Margin="4"/>
+                <Button VerticalAlignment="Center" Content="settings" />
+            </StackPanel>
+        </Grid>
+        <views:Joystick Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.506,0.429" Margin="3.333,0.667,1.333,-0.333" Loaded="Joystick_Loaded" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
+        <Viewbox>
+        <views:FlightBoard Grid.Column="0" Margin="0,0,100,10"/>
+        </Viewbox>
     </Grid>
 </Window>
