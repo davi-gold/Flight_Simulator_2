@@ -20,8 +20,13 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txtAutoPilot" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Blue"></TextBox>
-
+        <ScrollViewer Height="400" Grid.ColumnSpan="3" Margin="0,0,55,0">
+            <TextBox x:Name="txtAutoPilot" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Blue" 
+             Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Background="{Binding ChangeColorBackGround}" 
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Width="545" RenderTransformOrigin="0.347,0.392"/>
+        </ScrollViewer>
+        
         <Button  Name="OKButton" Content="OK" Height="20" Width="50"  Margin="0,20,4.778,60" HorizontalAlignment="Right" VerticalAlignment="Center"
                  FontWeight="DemiBold" Grid.Row="1" Grid.Column="0"/>
 
