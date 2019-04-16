@@ -33,8 +33,7 @@
             <TabItem>
                 <TabItem.Header>
                     <StackPanel>
-                        <TextBlock Margin="3" >Auto Pilot</TextBlock>
-                        <Image Source="happyface.jpg" Stretch="None" />
+                        <TextBlock Margin="3" >Auto Pilot</TextBlock>          
                     </StackPanel>
                 </TabItem.Header>
                 <StackPanel Margin="3">
