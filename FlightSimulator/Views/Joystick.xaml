@@ -145,7 +145,17 @@
                 </Slider.RenderTransform>
             </Slider>
 
-
+            <Label Content="0.0" HorizontalAlignment="Right"   VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1" Height="26" Width="25" Canvas.Left="345" Canvas.Top="-33"/>
+            <Label Content="0.0" HorizontalAlignment="Right"   VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Height="26" Width="25" Canvas.Left="370" Canvas.Top="-11">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="88.705"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
 
             <TextBlock Text="← rudder →" Height="40" Width="140" FontSize="23" FontWeight="Bold" 
                        VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="101" Canvas.Top="390" FontStretch="Medium"/>
