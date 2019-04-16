@@ -9,7 +9,14 @@
         
         Title="MainWindow" Height="570" Width="1000">
     <Grid>
-        <views:Joystick RenderTransformOrigin="0.506,0.429" Margin="3.333,0.667,1.333,-0.333" Loaded="Joystick_Loaded" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
-       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="685*"/>
+            <ColumnDefinition Width="308*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <views:Joystick RenderTransformOrigin="0.506,0.429" Margin="3,1,1.333,0" Loaded="Joystick_Loaded" Grid.RowSpan="2" Height="263" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>
