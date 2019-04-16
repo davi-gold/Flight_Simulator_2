@@ -4,9 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="500">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-
         <Canvas  x:Name="Base" Margin="0" Width="340" Height="340">
             <Ellipse HorizontalAlignment="Left" Height="340" VerticalAlignment="Top" Width="340">
                 <Ellipse.Fill>
@@ -50,7 +49,6 @@
 
             <Canvas  x:Name="Knob" VerticalAlignment="Top" HorizontalAlignment="Left" Width="0" Height="0" RenderTransformOrigin="0.5,0.5" Canvas.Left="125" Canvas.Top="125">
                 <!--<Ellipse x:Name="Shadow" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="86" Fill="#52131212" Canvas.Left="22" Canvas.Top="18" />-->
-
                 <Ellipse x:Name="KnobBase" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="90" RenderTransformOrigin="0.5,0.5" Canvas.Top="1">
                     <Ellipse.Fill>
                         <RadialGradientBrush>
@@ -118,7 +116,9 @@
                     <TranslateTransform x:Name="knobPosition" />
                 </Canvas.RenderTransform>
                 <Canvas.Resources>
+
                     <Storyboard x:Key="CenterKnob" Name="centerKnob" Completed="centerKnob_Completed">
+
                         <DoubleAnimation Storyboard.TargetName="knobPosition"
                              Storyboard.TargetProperty="X" To="0" Duration="0:0:0.2">
                             <DoubleAnimation.EasingFunction>
@@ -133,75 +133,6 @@
                     </Storyboard>
                 </Canvas.Resources>
             </Canvas>
-            <Label Name="try" Content="{Binding ElementName=Throttle, Path=Value}" FontSize="13" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" />
-            <Slider Name="Throttle" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle,Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="-184" Width="320" Canvas.Top="158" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" >
-                <Slider.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-89.997"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Slider.RenderTransform>
-            </Slider>
-
-            <Label Content="0.0" HorizontalAlignment="Right"   VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="1" Height="26" Width="25" Canvas.Left="345" Canvas.Top="-33"/>
-            <Label Content="0.0" HorizontalAlignment="Right"   VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Height="26" Width="25" Canvas.Left="370" Canvas.Top="-11">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="88.705"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
-
-            <TextBlock Text="← rudder →" Height="40" Width="140" FontSize="23" FontWeight="Bold" 
-                       VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="101" Canvas.Top="390" FontStretch="Medium"/>
-            <TextBlock Text="← elevator →" Height="40" Width="150" FontSize="23" FontWeight="Bold" 
-                       VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="305" Canvas.Top="150" FontStretch="Medium" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="89.42"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
-            <TextBlock Text="← throttle →" Height="40" Width="140" FontSize="23" FontWeight="Bold" 
-                       VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="-130" Canvas.Top="150" FontStretch="Medium" RenderTransformOrigin="0.5,0.5">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="89.976"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
-            <TextBlock Text="← aileron →" Height="40" Width="140" FontSize="23" FontWeight="Bold" 
-                       VerticalAlignment="Top" HorizontalAlignment="Left" Canvas.Left="101" Canvas.Top="-40" FontStretch="Medium"/>
-            <Label Name="Throttle_Copy1" Content="{Binding ElementName=Throttle_Copy, Path=Value}" FontSize="15" RenderTransformOrigin="1.855,0.78" Height="30" Width="69" Canvas.Left="311" Canvas.Top="311" />
-            <Slider x:Name="Throttle_Copy" Maximum="1" Minimum="-1" TickPlacement="BottomRight" Value="{Binding Throttle, Mode=OneWayToSource}" TickFrequency="0.1" Background="White" Height="30" Canvas.Left="8" Width="320" Canvas.Top="350" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" >
-                <Slider.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.459"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Slider.RenderTransform>
-            </Slider>
-            <TextBlock.Foreground>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Gray" Offset="0.1" />
-                    <GradientStop Color="Black" Offset="0.25" />
-                    <GradientStop Color="Gray" Offset="0.75" />
-                    <GradientStop Color="Black" Offset="1.0" />
-                </LinearGradientBrush>
-            </TextBlock.Foreground>
         </Canvas>
     </Grid>
 </UserControl>
