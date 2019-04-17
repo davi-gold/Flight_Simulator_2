@@ -24,7 +24,7 @@
         </TextBox>
 
         <Button  Name="OK" Content="OK" Height="30" Width="60"  Margin="6" HorizontalAlignment="Right" VerticalAlignment="Center"
-                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" Command="{Binding OkCommand}" />
+                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" Command="{Binding OKCommand}" />
 
         <Button  Name="Clear" Content="Clear" Height="30" Width="60"  Margin="6" HorizontalAlignment="Left" VerticalAlignment="Center" 
                  FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Command="{Binding ClearCommand}"/>

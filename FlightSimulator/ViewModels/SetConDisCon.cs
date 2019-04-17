@@ -30,6 +30,7 @@ namespace FlightSimulator.ViewModels
             //else
             new Thread(() =>
             {
+                Thread.CurrentThread.IsBackground = true;
                 //creating server side connection
                 InfoServer.Instance.connect();
                 //creating client side connection

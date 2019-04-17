@@ -63,17 +63,17 @@ namespace FlightSimulator.Model
         public void connect()
         {
             //no need for try and catch because of assigment instructions
-            TcpListener server = null;
+            TcpListener listener = null;
             int port = ApplicationSettingsModel.Instance.FlightCommandPort;
             IPAddress ipAd = IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP);
             //creating server
-            server = new TcpListener(ipAd, port);
+            listener = new TcpListener(ipAd, port);
             // Thread listenThread = new Thread(server.Start);
-            server.Start();
+            listener.Start();
             isConnected = true;
             Console.WriteLine("server connected");
             //tcp client for this server
-            client = server.AcceptTcpClient();
+            client = listener.AcceptTcpClient();
             listenThread = new Thread(() =>
             {
                 //NOT SURE IF I NEED THIS
