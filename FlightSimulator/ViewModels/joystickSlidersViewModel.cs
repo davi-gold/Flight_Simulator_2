@@ -7,7 +7,7 @@ using FlightSimulator.Model;
 
 namespace FlightSimulator.ViewModels
 {
-    class joystickSlidersViewModel
+    class JoystickSlidersViewModel
     {
         public float throttle
         {
