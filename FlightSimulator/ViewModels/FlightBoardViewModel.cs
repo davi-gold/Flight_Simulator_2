@@ -23,12 +23,12 @@ namespace FlightSimulator.ViewModels
 
         public double Lon
         {
-            get;
+            get { return InfoServer.Instance.lon; }
         }
 
         public double Lat
         {
-            get;
+            get { return InfoServer.Instance.lat; }
         }
     }
 }
