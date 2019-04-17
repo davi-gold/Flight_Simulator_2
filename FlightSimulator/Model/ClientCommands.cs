@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Threading;
 using System.Net;
+using System.IO;
 
 namespace FlightSimulator.Model
 {
@@ -39,6 +40,34 @@ namespace FlightSimulator.Model
             IPAddress ipAd = IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP);
             tcpClient.Connect(ipAd, port);
             Console.WriteLine("client connected");
+        }
+
+        public void sendStream(string line)
+        {
+            string[] stream = line.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+            clientThread = new Thread(() => sendStream(stream));
+            clientThread.Start();
+        }
+        public void sendStream(string[] message)
+        {
+            if (isConnected)
+            {
+                NetworkStream ns = tcpClient.GetStream();
+                foreach(string str in message)
+                {
+                    string setting = str+"\r\n";
+                    byte[] buff = Encoding.ASCII.GetBytes(setting);
+                    ns.Write(buff, 0, buff.Length);
+                    Thread.Sleep(2000);
+                }
+            }
+            
+        }
+
+        public void disconnect()
+        {
+            isConnected = false;
+            tcpClient.Close();
         }
     }
 }
