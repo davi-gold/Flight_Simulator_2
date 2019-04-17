@@ -16,12 +16,12 @@ namespace FlightSimulator.ViewModels
         {
             get
             {
-                return _connect ?? (_connect = new CommandHandler(() => commandClicked()));
+                return _connect ?? (_connect = new CommandHandler(() => connectClicked()));
             }
 
         }
         //calling connect in model
-        public void commandClicked()
+        public void connectClicked()
         {
             //if is already connected, need to close 
             //the previous connection and create a new connections
@@ -34,5 +34,24 @@ namespace FlightSimulator.ViewModels
                 //need to add connect for client side
             }).Start();
         }
+
+        private ICommand _disconnect;
+        public ICommand disconnect
+        {
+            get
+            {
+                return _disconnect ?? (_disconnect = new CommandHandler(() => disconnectClicked()));
+            }
+        }
+
+        public void disconnectClicked()
+        {
+            new Thread(() =>
+            {
+                //closing server side connection
+                InfoServer.Instance.disconnect();
+                //need to add disconnect for client side
+            }).Start();
+        }      
     }
 }

@@ -10,13 +10,13 @@ namespace FlightSimulator.ViewModels
 {
     class AutoPilotBackgroundViewModel : BaseNotify
     {
-        private string textBox;
+        private string setCommandText;
         private ICommand _clearCommand;
         private ICommand _OKCommand;
 
         public AutoPilotBackgroundViewModel()
         {
-            textBox = "";
+            setCommandText = "";
         }
 
         public string Text
@@ -24,11 +24,11 @@ namespace FlightSimulator.ViewModels
             get
             {
                 NotifyPropertyChanged("ChangeColorBackGround");
-                return textBox;
+                return setCommandText;
             }
             set
             {
-                textBox = value;
+                setCommandText = value;
             }
         }
 
@@ -43,13 +43,13 @@ namespace FlightSimulator.ViewModels
 
         private void ClearClick()
         {
-            textBox = "";
+            setCommandText = "";
             NotifyPropertyChanged("Text");
         }
 
         public string ChangeColorBackGround
         {
-            get { return (textBox == "") ? "White" : "Pink"; }
+            get { return (setCommandText == "") ? "White" : "Pink"; }
         }
 
         public ICommand OKCommand
@@ -63,7 +63,7 @@ namespace FlightSimulator.ViewModels
 
         private void OKClick()
         {
-
+            //will send the setCommandTextTextText
         }
     }
 }
