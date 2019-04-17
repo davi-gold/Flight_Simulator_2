@@ -75,7 +75,7 @@ namespace FlightSimulator.Model
             //tcp client for this server
             client = listener.AcceptTcpClient();
             listenThread = new Thread(() =>
-            {
+            { 
                 //NOT SURE IF I NEED THIS
                 Thread.CurrentThread.IsBackground = true;
                 /* run your code here */
