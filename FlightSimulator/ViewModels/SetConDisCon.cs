@@ -37,7 +37,7 @@ namespace FlightSimulator.ViewModels
                 ClientCommands.Instance.connect();
             }).Start();
         }
-
+         
         private ICommand _disconnect;
         public ICommand disconnect
         {
