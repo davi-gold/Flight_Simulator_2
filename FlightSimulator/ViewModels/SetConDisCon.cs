@@ -32,7 +32,8 @@ namespace FlightSimulator.ViewModels
             {
                 //creating server side connection
                 InfoServer.Instance.connect();
-                //need to add connect for client side
+                //creating client side connection
+                ClientCommands.Instance.connect();
             }).Start();
         }
 
@@ -51,7 +52,8 @@ namespace FlightSimulator.ViewModels
             {
                 //closing server side connection
                 InfoServer.Instance.disconnect();
-                //need to add disconnect for client side
+                //closing client side connection
+                ClientCommands.Instance.disconnect();
             }).Start();
         }
 
