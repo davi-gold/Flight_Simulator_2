@@ -73,6 +73,7 @@
     <Compile Include="ViewModels\AutoPilotBackgroundViewModel.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
     <Compile Include="ViewModels\FlightBoardViewModel.cs" />
+    <Compile Include="ViewModels\joystickSlidersViewModel.cs" />
     <Compile Include="ViewModels\SetConDisCon.cs" />
     <Compile Include="ViewModels\SettingsClickedViewModel.cs" />
     <Compile Include="ViewModels\SettingsWindowViewModel.cs" />
