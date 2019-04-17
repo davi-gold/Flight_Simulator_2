@@ -18,15 +18,16 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <local:Joystick x:Name="joystick1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" 
-                        VerticalAlignment="Center"></local:Joystick>
+        <local:Joystick x:Name="joystick1" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                        VerticalAlignment="Center" Aileron="{Binding aileron, Mode=OneWayToSource}" Elevator="{Binding elevator, Mode=OneWayToSource}"></local:Joystick>
+        
         <Slider x:Name="rudderSlider" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="320" Maximum="1"
                 Minimum="-1" TickPlacement="BottomRight" TickFrequency="0.1" Grid.Row="2"
-                Margin="50" Grid.ColumnSpan="3" />
+                Margin="50" Grid.ColumnSpan="3" Value= "{Binding rudder}" />
 
         <Slider x:Name="throttleSlider" VerticalAlignment="Center" HorizontalAlignment="Left" Height="320" Maximum="1"
                 Minimum="-1" TickPlacement="BottomRight" TickFrequency="0.1"
-                 Margin="30" Grid.RowSpan="3" Orientation="Vertical"/>
+                 Margin="30" Grid.RowSpan="3" Orientation="Vertical" Value= "{Binding throttle}" />
 
         <TextBlock x:Name="throttle" Text="←throttle→" VerticalAlignment="Center" HorizontalAlignment="Left" 
                    FontSize="16" FontWeight="Bold" Grid.Row="1" Margin="10" >

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using FlightSimulator.Model;
 using System.Windows.Input;
 using System.Threading;
+using FlightSimulator.Views;
 
 namespace FlightSimulator.ViewModels
 {
@@ -52,6 +53,21 @@ namespace FlightSimulator.ViewModels
                 InfoServer.Instance.disconnect();
                 //need to add disconnect for client side
             }).Start();
-        }      
+        }
+
+        private ICommand _settingsClicked;
+        public ICommand getWindow
+        {
+            get
+            {
+                return _settingsClicked ?? (_settingsClicked = new CommandHandler(() => mission()));
+            }
+        }
+
+        private void mission()
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.ShowDialog();
+        }
     }
 }

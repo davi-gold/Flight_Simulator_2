@@ -23,7 +23,7 @@ namespace FlightSimulator
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new SettingsClickedViewModel();
+            this.DataContext = new SetConDisCon();
         }
 
         private void Joystick_Loaded(object sender, RoutedEventArgs e)
