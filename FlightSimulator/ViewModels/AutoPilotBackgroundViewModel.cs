@@ -8,13 +8,13 @@ using System.Windows.Input;
 
 namespace FlightSimulator.ViewModels
 {
-    class AutoPilotBackground : BaseNotify
+    class AutoPilotBackgroundViewModel : BaseNotify
     {
         private string textBox;
         private ICommand _clearCommand;
         private ICommand _OKCommand;
 
-        public AutoPilotBackground()
+        public AutoPilotBackgroundViewModel()
         {
             textBox = "";
         }

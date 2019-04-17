@@ -9,7 +9,6 @@
              d:DesignHeight="600" d:DesignWidth="600">
 
 
-
     <Grid Height="500" Width="500">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -20,18 +19,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Height="400" Grid.ColumnSpan="3" Margin="0,0,55,0">
-            <TextBox x:Name="txtAutoPilot" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Blue" 
-             Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Background="{Binding ChangeColorBackGround}" 
-             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-             ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Width="545" RenderTransformOrigin="0.347,0.392"/>
-        </ScrollViewer>
-        
-        <Button  Name="OKButton" Content="OK" Height="20" Width="50"  Margin="0,20,4.778,60" HorizontalAlignment="Right" VerticalAlignment="Center"
-                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="0"/>
+        <TextBox x:Name="AutoPilotTextBox" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Blue" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Background="{Binding ChangeColorBackGround}" AcceptsReturn="True">
 
-        <Button  Name="ClearButton" Content="Clear" Height="20" Width="50"  Margin="5.222,20,0,60" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="1"/>
+        </TextBox>
+
+        <Button  Name="OK" Content="OK" Height="30" Width="60"  Margin="6" HorizontalAlignment="Right" VerticalAlignment="Center"
+                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" Command="{Binding OkCommand}" />
+
+        <Button  Name="Clear" Content="Clear" Height="30" Width="60"  Margin="6" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Command="{Binding ClearCommand}"/>
+
 
     </Grid>
 </UserControl>
