@@ -63,7 +63,8 @@ namespace FlightSimulator.ViewModels
 
         private void OKClick()
         {
-            //will send the setCommandTextTextText
+            //will send the setCommandText
+
         }
     }
 }

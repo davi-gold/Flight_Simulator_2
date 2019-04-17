@@ -30,6 +30,18 @@ namespace FlightSimulator.Model
             }
         }
 
+        public double lat
+        {
+            set
+            {
+                lat = value;
+            }
+            get
+            {
+                return lat;
+            }
+        }
+
         private static InfoServer m_Instance = null;
         public static InfoServer Instance
         {
@@ -44,7 +56,7 @@ namespace FlightSimulator.Model
         }
         public InfoServer()
         {
-            isConnected = true;
+            isConnected = false;
         }
 
         //server side connection
@@ -58,6 +70,8 @@ namespace FlightSimulator.Model
             server = new TcpListener(ipAd, port);
             // Thread listenThread = new Thread(server.Start);
             server.Start();
+            isConnected = true;
+            Console.WriteLine("server connected");
             //tcp client for this server
             client = server.AcceptTcpClient();
             listenThread = new Thread(() =>
