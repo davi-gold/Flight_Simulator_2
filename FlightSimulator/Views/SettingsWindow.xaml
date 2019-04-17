@@ -18,12 +18,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="Cancel" Grid.Row="2" VerticalAlignment="Center"  Margin="82,59.556,13.556,29.778" Padding="5" Grid.Column="1" Content="Cancel"/>
-        <Button x:Name="OK" Grid.Row="2" VerticalAlignment="Center"  Margin="13,59.556,89.556,29.778" Padding="5" Content="OK" Grid.Column="1" />
+        <Button x:Name="Cancel" Grid.Row="2" VerticalAlignment="Center"  Margin="82,59.556,13.556,29.778" Padding="5" Grid.Column="1" Content="Cancel" Command="{Binding CancelCommand}"/>
+        <Button x:Name="OK" Grid.Row="2" VerticalAlignment="Center"  Margin="13,59.556,89.556,29.778" Padding="5" Content="OK" Grid.Column="1" Command="{Binding ClickCommand}"/>
 
-        <TextBox x:Name="FlightServerBox" Grid.Row="0" Grid.Column="2" Padding="3" Margin="3"></TextBox>
-        <TextBox x:Name="FlightInfoBox" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3"></TextBox>
-        <TextBox x:Name="FlightCommandBox" Grid.Row="2" Grid.Column="1" Padding="3" Margin="3,2.556,2.556,90.556" ></TextBox>
+        <TextBox x:Name="FlightServerBox" Grid.Row="0" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightServerIP}" ></TextBox>
+        <TextBox x:Name="FlightInfoBox" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightInfoPort}" ></TextBox>
+        <TextBox x:Name="FlightCommandBox" Grid.Row="2" Grid.Column="1" Padding="3" Margin="3,2.556,2.556,90.556" Text="{Binding FlightCommandPort}" ></TextBox>
 
         <TextBlock Grid.Row="0" Padding="4" Margin="3" Text="Flight Server IP:"/>
         <TextBlock Grid.Row="1" Padding="3" Margin="3" Text="Flight Info Port:"/>
