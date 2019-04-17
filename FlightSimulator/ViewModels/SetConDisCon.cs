@@ -26,6 +26,14 @@ namespace FlightSimulator.ViewModels
         {
             //if is already connected, need to close 
             //the previous connection and create a new connections
+            if (ClientCommands.Instance.isConnected)
+            {
+                new Thread(() =>
+                {
+                    ClientCommands.Instance.disconnect();
+                    ClientCommands.Instance.connect();
+                }).Start();
+            }
 
             //else
             new Thread(() =>

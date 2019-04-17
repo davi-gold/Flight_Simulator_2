@@ -14,8 +14,12 @@ namespace FlightSimulator.Model
     {
         TcpClient tcpClient;
         Thread clientThread;
-        private Mutex myMutex;
-        bool isConnected;
+
+        public bool isConnected
+        {
+            get;
+            set;
+        }
 
         private static ClientCommands m_Instance = null;
         public static ClientCommands Instance
@@ -32,7 +36,6 @@ namespace FlightSimulator.Model
         public ClientCommands()
         {
             isConnected = false;
-            myMutex = new Mutex();
         }
 
         public void connect()
