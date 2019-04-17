@@ -64,7 +64,9 @@ namespace FlightSimulator.ViewModels
         private void OKClick()
         {
             //will send the setCommandText
-            ClientCommands.Instance.sendStream(setCommandText);
+            ClientCommands.Instance.createClientThread(setCommandText);
+            setCommandText = "";
+            NotifyPropertyChanged("Text");
 
         }
     }

@@ -13,7 +13,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
-                ClientCommands.Instance.sendStream("set controls/flight/throttle " + value);
+                ClientCommands.Instance.createClientThread("set controls/flight/throttle " + value);
             }
         }
 
@@ -21,7 +21,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
-                ClientCommands.Instance.sendStream("set controls/flight/rudder " + value);
+                ClientCommands.Instance.createClientThread("set controls/flight/rudder " + value);
             }
         }
 
@@ -29,7 +29,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
-                ClientCommands.Instance.sendStream("set controls/flight/aileron " + value);
+                ClientCommands.Instance.createClientThread("set controls/flight/aileron " + value);
             }
         }
 
@@ -37,7 +37,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
-                ClientCommands.Instance.sendStream("set controls/flight/elevator " + value);
+                ClientCommands.Instance.createClientThread("set controls/flight/elevator " + value);
             }
         }
 

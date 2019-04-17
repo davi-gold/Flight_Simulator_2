@@ -14,6 +14,7 @@ namespace FlightSimulator.Model
     {
         TcpClient tcpClient;
         Thread clientThread;
+        private Mutex myMutex;
         bool isConnected;
 
         private static ClientCommands m_Instance = null;
@@ -31,18 +32,20 @@ namespace FlightSimulator.Model
         public ClientCommands()
         {
             isConnected = false;
+            myMutex = new Mutex();
         }
 
         public void connect()
         {
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
+            ApplicationSettingsModel.Instance.FlightCommandPort);
             tcpClient = new TcpClient();
-            int port = ApplicationSettingsModel.Instance.FlightCommandPort;
-            IPAddress ipAd = IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP);
-            tcpClient.Connect(ipAd, port);
-            Console.WriteLine("client connected");
+            tcpClient.Connect(ep);
+            Console.WriteLine("Command channel :You are connected");
+            isConnected = true;
         }
 
-        public void sendStream(string line)
+        public void createClientThread(string line)
         {
             string[] stream = line.Split(new string[] { "\r\n" }, StringSplitOptions.None);
             clientThread = new Thread(() => sendStream(stream));

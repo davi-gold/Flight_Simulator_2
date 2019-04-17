@@ -15,6 +15,7 @@ namespace FlightSimulator.Model
     {
         //the client we're listening to
         TcpClient client;
+        TcpListener listener;
         bool isConnected;
         Thread listenThread;
 
@@ -23,6 +24,7 @@ namespace FlightSimulator.Model
             set
             {
                 lon = value;
+                NotifyPropertyChanged("Lon");
             }
             get
             {
@@ -35,6 +37,7 @@ namespace FlightSimulator.Model
             set
             {
                 lat = value;
+                NotifyPropertyChanged("Lat");
             }
             get
             {
@@ -62,30 +65,19 @@ namespace FlightSimulator.Model
         //server side connection
         public void connect()
         {
-            //no need for try and catch because of assigment instructions
-            TcpListener listener = null;
-            int port = ApplicationSettingsModel.Instance.FlightCommandPort;
-            IPAddress ipAd = IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP);
-            //creating server
-            listener = new TcpListener(ipAd, port);
-            // Thread listenThread = new Thread(server.Start);
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
+       ApplicationSettingsModel.Instance.FlightInfoPort);
+            listener = new TcpListener(ep);
             listener.Start();
-            isConnected = true;
-            Console.WriteLine("server connected");
-            //tcp client for this server
+            // Console.WriteLine("Waiting for client connections...");
             client = listener.AcceptTcpClient();
-            listenThread = new Thread(() =>
-            { 
-                //NOT SURE IF I NEED THIS
-                Thread.CurrentThread.IsBackground = true;
-                /* run your code here */
-                listenAndRead();
-            });
-            listenThread.Start();
-            //need to check when to close thread
+            Console.WriteLine("Info channel: Client connected");
+            
+            Thread thread = new Thread(() => listenAndRead(client, listener));
+            thread.Start();
         }
 
-        public void listenAndRead()
+        public void listenAndRead(TcpClient client, TcpListener listener)
         {
             Byte[] bytes;
             NetworkStream ns = client.GetStream();
@@ -98,12 +90,16 @@ namespace FlightSimulator.Model
                     ns.Read(bytes, 0, client.ReceiveBufferSize);
                     //msg = longitude-deg, latitude-deg 
                     string msg = Encoding.ASCII.GetString(bytes);
-                    lon = float.Parse(msg.Split('-')[0]);
-                    lon = float.Parse(msg.Split('-')[1]);
+                    if (msg.Contains(","))
+                    {
+                        lon = float.Parse(msg.Split(',')[0]);
+                        lon = float.Parse(msg.Split(',')[1]);
+                    }
                 }
             }
             ns.Close();
             client.Close();
+            listener.Stop();
         }
 
         public void disconnect()
@@ -111,6 +107,7 @@ namespace FlightSimulator.Model
             //will stop while loop
             isConnected = false;
             client.Close();
+            listener.Stop();
         }
     }
 }
