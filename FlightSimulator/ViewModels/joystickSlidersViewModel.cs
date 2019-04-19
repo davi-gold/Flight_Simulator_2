@@ -13,7 +13,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
-                ClientCommands.Instance.createClientThread("set controls/flight/throttle " + value);
+                ClientCommands.Instance.createClientThread("set controls/engines/current-engine/throttle " + value);
             }
         }
 

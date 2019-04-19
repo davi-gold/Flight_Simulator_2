@@ -24,7 +24,7 @@ namespace FlightSimulator.Model
             set
             {
                 lon = value;
-                NotifyPropertyChanged("Lon");
+                NotifyPropertyChanged("lon");
             }
             get
             {
@@ -37,7 +37,7 @@ namespace FlightSimulator.Model
             set
             {
                 lat = value;
-                NotifyPropertyChanged("Lat");
+                NotifyPropertyChanged("lat");
             }
             get
             {
@@ -93,7 +93,7 @@ namespace FlightSimulator.Model
                     if (msg.Contains(","))
                     {
                         lon = float.Parse(msg.Split(',')[0]);
-                        lon = float.Parse(msg.Split(',')[1]);
+                        lat = float.Parse(msg.Split(',')[1]);
                     }
                 }
             }

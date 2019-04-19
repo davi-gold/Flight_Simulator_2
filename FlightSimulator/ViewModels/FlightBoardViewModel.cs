@@ -21,12 +21,12 @@ namespace FlightSimulator.ViewModels
             NotifyPropertyChanged(e.PropertyName);
         }
 
-        public double Lon
+        public double lon
         {
             get { return InfoServer.Instance.lon; }
         }
 
-        public double Lat
+        public double lat
         {
             get { return InfoServer.Instance.lat; }
         }
