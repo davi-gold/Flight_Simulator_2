@@ -11,12 +11,12 @@ namespace FlightSimulator.ViewModels
 {
     class SettingsClickedViewModel
     {
-        private ICommand _settingsClicked;
+        private ICommand settingsClicked;
         public ICommand getWindow
         {
             get
             {
-                return _settingsClicked ?? (_settingsClicked = new CommandHandler(() => mission()));
+                return settingsClicked ?? (settingsClicked = new CommandHandler(() => mission()));
             }
         }
 

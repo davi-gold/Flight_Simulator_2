@@ -31,18 +31,17 @@ namespace FlightSimulator.ViewModels
                 new Thread(() =>
                 {
                     ClientCommands.Instance.disconnect();
-                    ClientCommands.Instance.connect();
+                    ClientCommands.Instance.connect(InfoServer.Instance.listener);
                 }).Start();
             }
 
             //else
             new Thread(() =>
             {
-                Thread.CurrentThread.IsBackground = true;
                 //creating server side connection
                 InfoServer.Instance.connect();
                 //creating client side connection
-                ClientCommands.Instance.connect();
+                ClientCommands.Instance.connect(InfoServer.Instance.listener);
             }).Start();
         }
          
@@ -66,12 +65,12 @@ namespace FlightSimulator.ViewModels
             }).Start();
         }
 
-        private ICommand _settingsClicked;
+        private ICommand settingsClicked;
         public ICommand getWindow
         {
             get
             {
-                return _settingsClicked ?? (_settingsClicked = new CommandHandler(() => mission()));
+                return settingsClicked ?? (settingsClicked = new CommandHandler(() => mission()));
             }
         }
 

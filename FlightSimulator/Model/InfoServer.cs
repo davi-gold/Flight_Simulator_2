@@ -15,7 +15,7 @@ namespace FlightSimulator.Model
     {
         //the client we're listening to
         TcpClient client;
-        TcpListener listener;
+        //TcpListener listener;
         bool isConnected;
         Thread listenThread;
 
@@ -44,6 +44,15 @@ namespace FlightSimulator.Model
                 return lat;
             }
         }
+
+        public TcpListener listener
+        {
+            get
+            {
+                return listener;
+            }
+        }
+
 
         private static InfoServer m_Instance = null;
         public static InfoServer Instance
