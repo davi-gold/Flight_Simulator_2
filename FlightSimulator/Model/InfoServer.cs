@@ -43,6 +43,7 @@ namespace FlightSimulator.Model
             {
                 if (lat != value)
                 {
+                    Console.Write(lat);
                     lat = value;
                     NotifyPropertyChanged("Lat");
                 }
