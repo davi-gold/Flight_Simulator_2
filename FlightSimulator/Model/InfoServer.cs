@@ -15,7 +15,7 @@ namespace FlightSimulator.Model
     {
         //the client we're listening to
         TcpClient client;
-        TcpListener listener;
+        //TcpListener listener;
         bool isConnected;
         Thread listenThread;
 
@@ -46,17 +46,11 @@ namespace FlightSimulator.Model
             }
         }
 
-        /*public TcpListener listener
+        public TcpListener listener
         {
-            get
-            {
-                return listener;
-            }
-            set
-            {
-
-            }
-        }*/
+            set;
+            get;
+        }
 
 
         private static InfoServer m_Instance = null;
@@ -79,12 +73,13 @@ namespace FlightSimulator.Model
         //server side connection
         public void connect()
         {
-            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
+            /*IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
        ApplicationSettingsModel.Instance.FlightInfoPort);
-            listener = new TcpListener(ep);
-            /*Int32 port = ApplicationSettingsModel.Instance.FlightInfoPort;
+            listener = new TcpListener(ep);*/
+            Int32 port = ApplicationSettingsModel.Instance.FlightInfoPort;
             IPAddress ip = IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP);
-            listener = new TcpListener(ip, port);*/
+            IPEndPoint ep = new IPEndPoint(ip, port);
+            listener = new TcpListener(ep);
             listener.Start();
             // Console.WriteLine("Waiting for client connections...");
             client = listener.AcceptTcpClient();
