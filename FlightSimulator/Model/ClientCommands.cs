@@ -75,7 +75,7 @@ namespace FlightSimulator.Model
             }
             
         }
-
+        
         public void disconnect()
         {
             isConnected = false;
