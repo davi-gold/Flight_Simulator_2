@@ -51,6 +51,10 @@ namespace FlightSimulator.Model
             {
                 return listener;
             }
+            set
+            {
+
+            }
         }
 
 
