@@ -19,13 +19,16 @@ namespace FlightSimulator.Model
         bool isConnected;
         Thread listenThread;
 
-
-        public double lon
+        public double lon;
+        public double Lon
         {
             set
             {
-                lon = value;
-                NotifyPropertyChanged("lon");
+                if(lon!= value)
+                {
+                    lon = value;
+                    NotifyPropertyChanged("Lon");
+                }
             }
             get
             {
@@ -33,12 +36,16 @@ namespace FlightSimulator.Model
             }
         }
 
-        public double lat
+        public double lat;
+        public double Lat
         {
             set
             {
-                lat = value;
-                NotifyPropertyChanged("lat");
+                if (lat != value)
+                {
+                    lat = value;
+                    NotifyPropertyChanged("Lat");
+                }
             }
             get
             {
@@ -84,13 +91,13 @@ namespace FlightSimulator.Model
             // Console.WriteLine("Waiting for client connections...");
             client = listener.AcceptTcpClient();
             Console.WriteLine("Info channel: Client connected");
-            
-            Thread thread = new Thread(() => listenAndRead(client, listener));
+            isConnected = true;
+            Thread thread = new Thread(() => listenAndRead());
             thread.Start();
         }
 
         //this should be simluator sending me the info but i don't think it's working
-        public void listenAndRead(TcpClient client, TcpListener listener)
+        public void listenAndRead()
         {
              /*Byte[] bytes;
              NetworkStream ns = client.GetStream();
@@ -121,8 +128,18 @@ namespace FlightSimulator.Model
             int i;
             while (isConnected)
             {
-                // Loop to receive all the data sent by the client.
-                while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
+                if (client.ReceiveBufferSize > 0)
+                {
+                    bytes = new byte[client.ReceiveBufferSize];
+                    stream.Read(bytes, 0, client.ReceiveBufferSize);
+                    string msg = Encoding.ASCII.GetString(bytes); //the message incoming
+                    if (msg!=null && msg.Contains(","))
+                    {
+                        Lon = float.Parse(msg.Split(',')[0]);
+                        Lat = float.Parse(msg.Split(',')[1]);
+                    }
+                }
+                /*while ((i = stream.Read(bytes, 0, bytes.Length)) != 0)
                 {
                     // Translate data bytes to a ASCII string.
                     data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
@@ -132,22 +149,22 @@ namespace FlightSimulator.Model
                     data = data.ToUpper();
                     if (data.Contains(","))
                     {
-                        lon = float.Parse(data.Split(',')[0]);
-                        lat = float.Parse(data.Split(',')[1]);
+                        Lon = float.Parse(data.Split(',')[0]);
+                        Lat = float.Parse(data.Split(',')[1]);
                     }
-                }
+                }*/
 
             }
             stream.Close();
             client.Close();
-            listener.Stop();
+           // listener.Stop();
         }
 
         public void disconnect()
         {
             //will stop while loop
             isConnected = false;
-            client.Close();
+            //client.Close();
             listener.Stop();
         }
     }
