@@ -31,7 +31,7 @@ namespace FlightSimulator.ViewModels
                 new Thread(() =>
                 {
                     ClientCommands.Instance.disconnect();
-                    ClientCommands.Instance.connect(InfoServer.Instance.listener);
+                    ClientCommands.Instance.connect();
                 }).Start();
             }
 
@@ -41,7 +41,7 @@ namespace FlightSimulator.ViewModels
                 //creating server side connection
                 InfoServer.Instance.connect();
                 //creating client side connection
-                ClientCommands.Instance.connect(InfoServer.Instance.listener);
+                ClientCommands.Instance.connect();
             }).Start();
         }
          

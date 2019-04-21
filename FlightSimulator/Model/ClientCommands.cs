@@ -38,19 +38,19 @@ namespace FlightSimulator.Model
             isConnected = false;
         }
 
-        public void connect(TcpListener listener)
+        public void connect()
         {
-            /*IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
+            IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP),
             ApplicationSettingsModel.Instance.FlightCommandPort);
             tcpClient = new TcpClient();
             tcpClient.Connect(ep);
             Console.WriteLine("Command channel :You are connected");
-            isConnected = true;*/
-            Int32 port = ApplicationSettingsModel.Instance.FlightInfoPort;
+            isConnected = true;
+            /*Int32 port = ApplicationSettingsModel.Instance.FlightInfoPort;
             string server = listener.ToString();
             TcpClient client = new TcpClient(server, port);
             Console.WriteLine("Command channel :You are connected");
-            isConnected = true;
+            isConnected = true;*/
 
         }
 
