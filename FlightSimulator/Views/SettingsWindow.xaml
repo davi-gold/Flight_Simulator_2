@@ -18,19 +18,16 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="Cancel" Grid.Row="2" VerticalAlignment="Center"  Margin="82,59.556,13.556,29.778" Padding="5" Grid.Column="1" Content="Cancel" Command="{Binding CancelCommand}"/>
-        <Button x:Name="OK" Grid.Row="2" VerticalAlignment="Center"  Margin="13,59.556,89.556,29.778" Padding="5" Content="OK" Grid.Column="1" Command="{Binding ClickCommand}"/>
+        <Button x:Name="Cancel" Grid.Row="2" VerticalAlignment="Center"  Margin="27.444,54.556,60.556,35.444" Padding="5" Grid.Column="1" Content="Cancel"  FontFamily="Calibri"  FontSize="15" FontWeight="Thin" Command="{Binding CancelCommand}"/>
+        <Button x:Name="OK" Grid.Row="2" VerticalAlignment="Center"  Margin="60,54.556,150.556,35.444" Padding="5" Content="OK" FontFamily="Calibri"  FontSize="15" FontWeight="Thin" Command="{Binding ClickCommand}" Grid.ColumnSpan="2"/>
 
         <TextBox x:Name="FlightServerBox" Grid.Row="0" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightServerIP}" ></TextBox>
         <TextBox x:Name="FlightInfoBox" Grid.Row="1" Grid.Column="2" Padding="3" Margin="3" Text="{Binding FlightInfoPort}" ></TextBox>
         <TextBox x:Name="FlightCommandBox" Grid.Row="2" Grid.Column="1" Padding="3" Margin="3,2.556,2.556,90.556" Text="{Binding FlightCommandPort}" ></TextBox>
 
-        <TextBlock Grid.Row="0" Padding="4" Margin="3" Text="Flight Server IP:"/>
-        <TextBlock Grid.Row="1" Padding="3" Margin="3" Text="Flight Info Port:"/>
-        <TextBlock Grid.Row="2" Padding="3" Margin="3" Text="Flight Command port:"/>
-
-
-
+        <TextBlock Grid.Row="0" Padding="4" Margin="3" FontFamily="Calibri"  FontSize="13" FontWeight="Regular" Text="Flight Server IP:"/>
+        <TextBlock Grid.Row="1" Padding="3" Margin="3" FontFamily="Calibri"  FontSize="13" FontWeight="Regular" Text="Flight Info Port:"/>
+        <TextBlock Grid.Row="2" Padding="3" Margin="3" FontFamily="Calibri"  FontSize="13" FontWeight="Regular" Text="Flight Command port:"/>
 
 
     </Grid>

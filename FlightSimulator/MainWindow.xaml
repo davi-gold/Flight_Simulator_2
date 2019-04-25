@@ -19,23 +19,25 @@
                 <RowDefinition Height="7*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button VerticalAlignment="Center" Padding="3" Content="Disconnect" Margin="3" Command="{Binding disconnect}"/>
-                <Button VerticalAlignment="Center" Padding="3" Content="Connect" Margin="3" Command="{Binding connect}"/>
-                <Button VerticalAlignment="Center" Padding="3" Content="Settings" Margin="3" Command="{Binding getWindow}" />
+                <Button VerticalAlignment="Center" Padding="3" Content="Disconnect" Margin="3" FontFamily="Calibri"  FontSize="13" FontWeight="Regular" Command="{Binding disconnect}"/>
+                <Button VerticalAlignment="Center" Padding="3" Content="Connect" Margin="3" FontFamily= "Calibri"  FontSize="13" FontWeight="Regular"  Command="{Binding connect}"/>
+                <Button VerticalAlignment="Center" Padding="3" Content="Settings" Margin="3" FontFamily="Calibri"  FontSize="13" FontWeight="Regular"  Command="{Binding getWindow}" />
             </StackPanel>
         </Grid>
+       
+        <Viewbox>
+            <views:FlightBoard Grid.Column="0" Margin="20,0,100,10" Loaded="FlightBoard_Loaded"/>
+        </Viewbox>
+
         <Viewbox Grid.Column="1">
             <TabControl Height="569" Width="539">
                 <TabItem Header="Manual">
-                    <views:myJoystick Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.506,0.429" Margin="3,1,-18.333,2.333" Loaded="Joystick_Loaded" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
+                    <views:myJoystick Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Margin="3,1,-18.333,3" Loaded="Joystick_Loaded" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
                 </TabItem>
                 <TabItem Header="Auto Pilot">
-                    <views:AutoPilot Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.506,0.429" Margin="3.333,0.667,1.333,-0.333" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
+                    <views:AutoPilot Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5" Margin="3.333,0.670,1.333,-0.333" Grid.RowSpan="2" Grid.ColumnSpan="4"/>
                 </TabItem>
             </TabControl>
-        </Viewbox>
-        <Viewbox>
-            <views:FlightBoard Grid.Column="0" Margin="0,0,100,10"/>
         </Viewbox>
     </Grid>
 </Window>

@@ -28,9 +28,8 @@
             <RowDefinition/>
             <RowDefinition Height="Auto" MinHeight="47.333"/>
         </Grid.RowDefinitions>
-        <TextBlock Style="{StaticResource LabelStyle}" LayoutTransform="{StaticResource rotate}" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="-10,236,5,215" Height="27" Width="35">Lon</TextBlock>
-        <d3:ChartPlotter Grid.Row="0" LegendVisible="False" Name="plotter" Margin="10,50,10,5" Grid.Column="2"/>
-        <TextBlock Style="{StaticResource LabelStyle}" HorizontalAlignment="Center" Grid.Column="2" Margin="254,9,277,12.333" Width="29" Grid.Row="1">Lat</TextBlock>
-
+        <TextBlock Style="{StaticResource LabelStyle}" LayoutTransform="{StaticResource rotate}" VerticalAlignment="Center" FontFamily="Calibri" FontSize="25" FontWeight="Regular" Grid.ColumnSpan="2" Margin="0,236,5,215" Height="27" Width="35">Lon</TextBlock>
+        <TextBlock Style="{StaticResource LabelStyle}" HorizontalAlignment="Center"  FontFamily="Calibri" FontSize="25" FontWeight="Regular" Grid.Column="2" Margin="254,9,277,12.333" Width="29" Grid.Row="1">Lat</TextBlock>
+      <d3:ChartPlotter Grid.Row="0" LegendVisible="True" Name="plot" Margin="10,50,10,5" Grid.Column="2"/>
     </Grid>
 </UserControl>

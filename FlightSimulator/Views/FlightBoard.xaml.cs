@@ -40,7 +40,8 @@ namespace FlightSimulator.Views
             // Set identity mapping of point in collection to point on plot
             planeLocations.SetXYMapping(p => p);
 
-            plotter.AddLineGraph(planeLocations, 2, "Route");
+            plot.AddLineGraph(planeLocations, 2, "Route");
+            Console.WriteLine(planeLocations);
         }
 
         private void Vm_PropertyChanged(object sender, PropertyChangedEventArgs e)

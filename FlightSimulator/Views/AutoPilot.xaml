@@ -8,26 +8,25 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="600">
 
-
-    <Grid Height="500" Width="500">
+    <Grid Height="530" Width="520">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="AutoPilotTextBox" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Blue" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Background="{Binding ChangeColorBackGround}" AcceptsReturn="True">
+        <TextBox x:Name="AutoTextBox" Grid.ColumnSpan="2" Height="400" VerticalAlignment="Top" BorderBrush="Black" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Background="{Binding ChangeColorBackGround}" AcceptsReturn="True">
 
         </TextBox>
 
-        <Button  Name="OK" Content="OK" Height="30" Width="60"  Margin="6" HorizontalAlignment="Right" VerticalAlignment="Center"
-                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="0" Command="{Binding OKCommand}" />
+        <Button  Name="OKButton" Content="Ok" Height="30" Width="95"  Margin="0,10.111,5,31"  VerticalAlignment="Center" HorizontalAlignment="Right"
+                 Grid.Row="1" Grid.Column="0"  FontFamily="Calibri" FontSize="18" FontWeight="Thin"  Command="{Binding OKCommand}" />
 
-        <Button  Name="Clear" Content="Clear" Height="30" Width="60"  Margin="6" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                 FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Command="{Binding ClearCommand}"/>
+        <Button  Name="ClearButton" Content="Clear" Height="30" Width="95"  Margin="5,10.111,0,31.889" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                Grid.Row="1" Grid.Column="1"  FontFamily="Calibri"  FontSize="18" FontWeight="Thin"  Command="{Binding ClearCommand}"/>
 
 
     </Grid>

@@ -30,5 +30,10 @@ namespace FlightSimulator
         {
 
         }
+
+        private void FlightBoard_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
