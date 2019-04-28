@@ -21,8 +21,8 @@
       
         <Slider x:Name="rudderS" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="320" Maximum="1"
                 Minimum="-1" TickPlacement="BottomRight" TickFrequency="0.1" Grid.Row="2"
-                Margin="50" Grid.ColumnSpan="3" Value= "{Binding rudder}" />
-
+                Margin="50" Grid.ColumnSpan="3" Value= "{Binding rudder}" /> 
+        
         <Slider x:Name="throttleS" VerticalAlignment="Center" HorizontalAlignment="Left" Height="320" Maximum="1"
                 Minimum="-1" TickPlacement="BottomRight" TickFrequency="0.1"
                  Margin="50" Grid.RowSpan="3" Orientation="Vertical" Value= "{Binding throttle}" />
